@@ -62,6 +62,7 @@
 			var ajax = new XMLHttpRequest();
 			ajax.onreadystatechange = function() {
 				if (ajax.readyState == 4 && ajax.status == 200) {
+					document.getElementById("test").innerHTML = ajax.responseText;
 				}
 			};
 			ajax.open("GET", "move.php?move="+move, true);
