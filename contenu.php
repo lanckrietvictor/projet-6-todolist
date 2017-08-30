@@ -23,7 +23,7 @@ $json = json_decode($file, true);
 		<div id="archiveList">
 			<?php 
 			foreach ($json["archive"] as $key => $value) {
-				echo "<input type='checkbox' value='".$value."'>".$value."<br>";
+				echo "<input type='checkbox' onclick='moveToToDo()' name='check' value='".$value."'><strike>".$value."</strike><br>";
 			} ?>
 		</div>
 	</form>

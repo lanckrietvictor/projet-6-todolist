@@ -67,6 +67,43 @@
 			};
 			ajax.open("GET", "move.php?move="+move, true);
 			ajax.send();
+
+			var ajax = new XMLHttpRequest();
+			ajax.onreadystatechange = function() {
+				if (ajax.readyState == 4 && ajax.status == 200) {
+					document.getElementById("content").innerHTML = ajax.responseText;
+				}
+			};
+			ajax.open("GET", "contenu.php", true);
+			ajax.send();
+		}
+
+		function moveToToDo () {
+			var check = document.forms[1];
+			var move = "";
+			var i;
+			for (i=0; i < check.length; i++) {
+				if (check[i].checked) {
+					move = check[i].value;
+				}
+			}
+			var ajax = new XMLHttpRequest();
+			ajax.onreadystatechange = function() {
+				if (ajax.readyState == 4 && ajax.status == 200) {
+					document.getElementById("test").innerHTML = ajax.responseText;
+				}
+			};
+			ajax.open("GET", "moveBack.php?move="+move, true);
+			ajax.send();
+
+			var ajax = new XMLHttpRequest();
+			ajax.onreadystatechange = function() {
+				if (ajax.readyState == 4 && ajax.status == 200) {
+					document.getElementById("content").innerHTML = ajax.responseText;
+				}
+			};
+			ajax.open("GET", "contenu.php", true);
+			ajax.send();
 		}
 	</script>
 </body>
