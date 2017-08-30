@@ -20,10 +20,10 @@ $json = json_decode($file, true);
 <section id="archive">
 	<h2>Archive</h2>
 	<form action="index.php">
-		<div id="archiveList">
+		<div id="archiveList" style='color: gray;'>
 			<?php 
 			foreach ($json["archive"] as $key => $value) {
-				echo "<input type='checkbox' onclick='moveToToDo()' name='check' value='".$value."'><strike>".$value."</strike><br>";
+				echo "<input type='checkbox' onclick='moveToToDo()' checked name='check' value='".$value."'><strike>".$value."</strike><br>";
 			} ?>
 		</div>
 	</form>

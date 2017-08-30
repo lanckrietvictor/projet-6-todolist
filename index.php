@@ -83,7 +83,7 @@
 			var move = "";
 			var i;
 			for (i=0; i < check.length; i++) {
-				if (check[i].checked) {
+				if (!check[i].checked) {
 					move = check[i].value;
 				}
 			}
